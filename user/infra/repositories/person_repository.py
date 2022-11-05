@@ -1,7 +1,6 @@
 from http.client import BAD_REQUEST
 from django.core.exceptions import ObjectDoesNotExist
 
-from user.entities.person_entity import PersonEntity
 from user.models import Person
 
 

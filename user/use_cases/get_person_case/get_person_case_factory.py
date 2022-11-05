@@ -1,4 +1,4 @@
-from user.repositories.person_repository import PersonRepository
+from user.infra.repositories.person_repository import PersonRepository
 from user.use_cases.get_person_case.get_person_case import GetPersonCase
 from user.use_cases.use_case_factory import UseCaseFactory
 

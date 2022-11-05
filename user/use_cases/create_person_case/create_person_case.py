@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 
-from user.repositories.person_repository import PersonRepository
+from user.infra.repositories.person_repository import PersonRepository
 from user.use_cases.base_use_case import BaseUseCase
-from user.dto.person_dto import PersonDto
+from user.infra.dto.person_dto import PersonDto
 
 
 class CreatePersonCase(BaseUseCase):

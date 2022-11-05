@@ -1,5 +1,5 @@
-from user.dto.person_dto import PersonDto
-from user.repositories.person_repository import PersonRepository
+from user.infra.dto.person_dto import PersonDto
+from user.infra.repositories.person_repository import PersonRepository
 from django.http import JsonResponse, HttpResponse
 
 from user.use_cases.base_use_case import BaseUseCase
