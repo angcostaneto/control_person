@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  django_user:
+    image: mysql:8.0.31
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'control_user'
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'django_user_control'
+      MYSQL_PASSWORD: 'django_user_control_1233'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/control_user
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    depends_on:
+      - django_user
+
+volumes:
+  mysql_data:
